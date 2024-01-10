@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add this to the head section of your HTML -->
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+     <script src="https://kit.fontawesome.com/f1ada74aeb.js" crossorigin="anonymous"></script>
+    <title>Ankit Regmi</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header-position">
+            <a href="/">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <p class="header-list">
+                <a class="scroll-link" href="#about">Home</a>
+                <a class="scroll-link" href="#projects">Projects</a>
+                <a class="scroll-link" href="#connect">Connect</a>
+          
+            </p>
+           <i class="fa-solid fa-bars mobile-menu-icon"></i>
+        </div>
+        </div>
+
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const navLinks = document.querySelectorAll('.header-list a');
+            
+                navLinks.forEach(function(navLink) {
+                    navLink.addEventListener('click', function(event) {
+                        event.preventDefault();
+            
+                        const targetId = this.getAttribute('href').substring(1);
+                        console.log('Target ID:', targetId); // Debugging statement
+            
+                        const targetElement = document.getElementById(targetId);
+                        console.log('Target Element:', targetElement); // Debugging statement
+            
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - document.querySelector('.header').offsetHeight,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+
+   <div id ="about">
+    <div class="landing-page">
+        <img class="profile-picture" src="images/profile-picture.jpg" alt="Profile Picture">
+    </div>
+    <div class="about_me">
+        I am a full-stack developer.
+        <p class="explore"> Exploring web development using javascript and python.</p>
+    </div>
+
+    <div class="connect">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100007404558205" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/AnkitRegmi1" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/regmi3746/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/ankit-regmi-4a5013239/ " target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+    <div class="cv">
+        <a href="resume.pdf" download class="btn">Download CV</a>
+    </div>
+
+   
+    </div>
+
+  
+    <div id = "projects">
+    <div class="portfolio">
+        Projects
+        <div class="images-description">
+            <div class="project">
+                <a href="https://ankitregmi1.github.io/Weather_app/" target="_blank">
+                <img class="weather_app" src="images/weather_image.jpg" alt="Weather App">
+                <div><p class="description">Weather App
+                   
+                </p>
+            </a>
+        </div>
+            </div>
+            <div class="project">
+                <a href="https://ankitregmi1.github.io/TO-DO-List-App/" target="_blank">
+                <img class="to-do_app" src="images/todo_list_image.webp" alt="TO-DO App">
+                <div><p class="description">TO-DO App</p> </a></div>
+            </div>
+            <div class="project">
+                <a href="https://ankitregmi1.github.io/QR_Code-Generator/" target="_blank">
+                <img class="qr_generator" src="images/QR Code  Generator.jpg" alt="QR-Generator App">
+                <div><p class="description">QR-Generator App</p></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+     
+    <div id = "connect">
+    <div class="container">
+        <h1>Contact Me</h1>
+        <form name="submit-to-google-sheet">
+            <label for="text">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="successMessage"></div>
+    </div>
+</div>
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.header-list a');
+    
+        navLinks.forEach(function(navLink) {
+            navLink.addEventListener('click', function(event) {
+                event.preventDefault();
+    
+                const targetId = this.getAttribute('href').substring(1);
+                console.log('Target ID:', targetId); // Debugging statement
+    
+                const targetElement = document.getElementById(targetId);
+                console.log('Target Element:', targetElement); // Debugging statement
+    
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - document.querySelector('.header').offsetHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwOXV99B9sz6cTVVzeF1S6QDrprDX-hp6pBkDz-1nvTYQDFHLeqY2aU59Bobl0gDxoUZQ/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                console.log('Success!', response);
+                // Reset the form after successful submission
+                form.reset();
+                // Optionally, display a success message
+                successMessage.innerHTML = 'Form submitted successfully!';
+            })
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
+  
+
+
+
+
+
+<script>
+    // Add this script to toggle the mobile menu on small screens
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+        const headerList = document.querySelector('.header-list');
+
+        mobileMenuIcon.addEventListener('click', function () {
+            headerList.classList.toggle('show-mobile-menu');
+        });
+    });
+</script>
+
+
+
+
+
+
+    
+</body>
+</html>

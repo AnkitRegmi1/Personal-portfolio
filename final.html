@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f1ada74aeb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <div id="header1">
+   
+    <div class="container">
+        <div class="header">
+            <div class="header-position">
+        <nav>
+            <img src ="images/logo.png" class="logo">
+            <p class="header-list">
+            <ul id="sidemenu">
+               
+                <li> <a href="#about">Home</a></li>
+                
+                <li> <a href="#second">Projects</a></li>
+                <li> <a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-square-xmark" onclick ="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </p>
+            
+        </nav>
+        </div>
+        </div>
+       </div>
+       </div>
+    
+       <div id="about">
+       <div class="landing-page">
+        <img class="profile-picture" src="images/profile-picture.jpg" alt="Profile Picture">
+    </div>
+    <div class="about_me">
+        I am a full-stack developer.
+        <p class="explore"> Exploring web development using javascript and python.</p>
+    </div>
+
+    <div class="connect">
+        <div class="social-icons">
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/AnkitRegmi1" target="_blank"><i class="fab fa-github"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/ankit-regmi-4a5013239/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</div>
+
+
+       <div id="second">
+       <div class="portfolio">
+        Projects
+        <div class="images-description">
+            <div class="project">
+                <img class="weather_app" src="images/weather_image.jpg" alt="Weather App">
+                <div><p class="description">Weather App</p></div>
+            </div>
+            <div class="project">
+                <img class="to-do_app" src="images/todo_list_image.webp" alt="TO-DO App">
+                <div><p class="description">TO-DO App</p></div>
+            </div>
+            <div class="project">
+                <img class="qr_generator" src="images/QR Code  Generator.jpg" alt="QR-Generator App">
+                <div><p class="description">QR-Generator App</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id = "contact">
+<div class="container">
+    <h1>Contact Me</h1>
+    <form id="contactForm" action ="https://script.google.com/macros/s/AKfycby-Rnx3230oBh2HG3_vO9icU3J1TV5RVfPjBpjN6CQ2039Mktzcf3qceWXDCV9fZVGZJg/exec">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div id="successMessage"></div>
+</div>
+</div>
+
+<script>
+    var sidemenu= document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0" 
+       }
+    function closemenu(){
+        sidemenu.style.right = "-200px" 
+       }
+ </script>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+
+    }
+ </script>
+
+ </body>
+
